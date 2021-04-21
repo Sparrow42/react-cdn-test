@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cdntest</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        //import React from 'react';
+        //import ReactDOM from 'react-dom';
+
+        const NumberButton = () => {
+            const array = [];
+            for(let i=0; i<10; i++){
+                array.push(i);
+            }
+            console.log(array);
+    
+            return (
+                <div>
+                {array.map((value) => {
+                    return (
+                        <div key={value}>
+                            <button key={value + 'aaa'}></button>
+                        </div>
+                    );
+                })}
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <NumberButton />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
